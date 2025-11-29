@@ -41,9 +41,9 @@ export const updateTodoAPI = async (todo) => {
 
 export const deleteTodoAPI = async (id) => {
     try {
-        const res = await axios.delete(`${import.meta.env.VITE_APP_API_URL}/${id}`)
-        console.log('deleted task successfully', res)
-        return res.data
+        axios.delete(`${import.meta.env.VITE_APP_API_URL}/${id}`)
+        console.log('deleted task successfully')
+        return id
     } catch (err) {
         console.error('Error on deleting todo task into the list', err)
         throw err
