@@ -41,7 +41,7 @@ export const updateTodoAPI = async (todo) => {
 
 export const deleteTodoAPI = async (id) => {
     try {
-        axios.delete(`${import.meta.env.VITE_APP_API_URL}/${id}`)
+        await axios.delete(`${import.meta.env.VITE_APP_API_URL}/todos/${id}`)
         console.log('deleted task successfully')
         return id
     } catch (err) {
